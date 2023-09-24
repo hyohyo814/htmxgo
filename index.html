@@ -4,35 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdn.tailwindcss.com" rel="stylesheet"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
 
 <body>
     <div class="flex-row mt-3 text-black">
-	<div class="col-8">
-	    <h1 class="mb-4">Film List</h1>
+	<div class="col-span-8">
+	    <h1 class="mb-4 text-2xl font-extrabold">Film List</h1>
 	    <ul>
 		{{ range .Films}}
-		    <li class="list-group-item text-white">{{ .Title }} - {{ .Director }}</li>
+		    <li class="list-group-item text-black font-serif">{{ .Title }} - {{ .Director }}</li>
 		{{ end }}
 	    </ul>
 	</div>
 
-	<div class="cols-4">
-		<h1 class="mb-4">Add Film</h1>
+	<div class="col-span-4">
+		<h1 class="mb-4 text-2xl font-extrabold">Add Film</h1>
 
 		<form>
 		    <div class="mb-2">
 			<label for="film-title"></label>
-			<input type="text" name="title" value="title" id="film-title" />
+			<input
+			type="text"
+			name="title"
+			value="title"
+			id="film-title"
+			class="border"/>
 		    </div>
 		    <div class="mb-3">
 			<label for="film-director"></label>
-			<input type="text" name="director" value="director" id="film-director" />
+			<input
+			type="text"
+			name="director"
+			value="director"
+			id="film-director"
+			class="border"/>
 		    </div>
 
-		    <button type="submit" class="btn btn-primary">Submit</button>
+		    <button type="submit" class="btn btn-primary h-12 w-24 bg-pink-500">Submit</button>
 		</form>
 	</div>
 
