@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title></title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Document</title>
-	</head>
-	<body>
-		<h1>Hello World</h1>
-	</body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="flex-row mt-3 text-black">
+	<div class="col-8">
+	    <h1 class="mb-4">Film List</h1>
+	    <ul>
+		{{ range .Films}}
+		    <li class="list-group-item text-white">{{ .Title }} - {{ .Director }}</li>
+		{{ end }}
+	    </ul>
+	</div>
+
+	<div>
+		<h1></h1>
+		<form>
+		    <div>
+			<label for=""></label>
+			<input type="" name="" value="" id>
+		    </div>
+		</form>
+	</div>
+
+
+    </div>
+</body>
+
 </html>
