@@ -28,7 +28,15 @@ func main() {
 		tmpl.Execute(w, films)
 	}
 
+	h2 := func(w http.ResponseWriter, r *http.Request) {
+		title := r.PostFormValue("title")
+		director := r.PostFormValue("director")
+		tmpl := template.Must(template.ParseFiles("index.html"))
+		tmpl.ExecuteTemplate(w, "film-list-element", Film{Title: title, Director: director})
+	}
+
 	http.HandleFunc("/", h1)
+	http.HandleFunc("/add-film/", h2)
 
 	log.Fatal(http.ListenAndServe(":8000", nil))
 }
